@@ -56,6 +56,7 @@ app.get('/scrape', function(req, res) {
   request('http://www.echojs.com/', function(error, response, html) {
   	// then, we load that into cheerio and save it to $ for a shorthand selector
     var $ = cheerio.load(html);
+    console.log('hi 2');
     // now, we grab every h2 within an article tag, and do the following:
     $('article h2').each(function(i, element) {
 
@@ -73,9 +74,9 @@ app.get('/scrape', function(req, res) {
 				var entry = new Article (result);
 
 				// now, save that entry to the db
-				entry.save(function(err, doc) {
+				entry.save(function(err, doc) { 
 					// log any errors
-				  if (err) {
+				  if (err) { 
 				    console.log(err);
 				  } 
 				  // or log the doc
@@ -88,7 +89,7 @@ app.get('/scrape', function(req, res) {
     });
   });
   // tell the browser that we finished scraping the text.
-  res.send("Scrape Complete");
+  console.log('hi 2');
 });
 
 // this will get the articles we scraped from the mongoDB

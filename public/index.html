@@ -3,11 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
   <style>
     body{
       /*background-color: #DECADE*/
       background-color: #222
 
+    }
+    h1,h2{
+      color: #ddd;
     }
     #wrapper{
       width:960px;
@@ -19,16 +26,25 @@
       height:700px;
       display:inline-block;
       overflow: auto;
+      color: #ddd;
     }
     #notes{
       width:30%;
       float:right;
       color: #ddd;
     }
+    .jumbotron{
+      background-color: #444;
+      color: #ddd;
+      text-align: center;
+    }
+    button{
+      color: #ff4010;
+    }
     textarea, input{
       display:block;
       width:100%;
-      background-color: #444;
+      color: #ddd;
     }
     input{
       height:36px;
@@ -42,8 +58,11 @@
 </head>
 <body>
   <div id="wrapper">
+  <div class="jumbotron">
     <h1>Note Scraper</h1>
     <h2><i>I only scrape notes</i></h2>
+    <button type="button" class="btn btn-inverted" action="/scrape" method='GET'>Scrape Articles</button> 
+    </div>
     <div id="articles"></div>
     <div id="notes"></div>
   </div>
